@@ -24,7 +24,7 @@ stages:
       displayName: Build and push Docker image
       inputs:
         containerRegistry: 'Docker Hub'
-        repository: 'hub.docker.com/repository/docker/ojob/angular-app'
+        repository: 'ojob/angular-app'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
