@@ -13,18 +13,18 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build image
+  displayName: Build and push image
   jobs:  
   - job: Build
-    displayName: Build
+    displayName: Build and push image
     pool:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
-      displayName: Build an image
+      displayName: Build and push Docker image
       inputs:
         containerRegistry: 'Docker Hub'
         repository: 'angular-app'
-        command: 'build'
+        command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
